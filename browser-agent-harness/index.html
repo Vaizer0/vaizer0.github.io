@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<meta name="description" content="Browser Agent Harness is a fast AI coding assistant for Android and PC browsers with free anonymous AI, Gemini Web2API support, custom OpenAI-compatible endpoints, persistent chats and lightweight streaming.">
+<meta name="keywords" content="free AI coding assistant, no login AI, browser AI agent, Android Chrome AI, PC AI coding assistant, Gemini Web2API, OpenAI compatible">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://vaizer0.github.io/browser-agent-harness/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Browser Agent Harness — Free AI Coding Assistant">
+<meta property="og:description" content="Fast browser AI coding assistant with anonymous free mode, persistent chats and configurable AI endpoints.">
+<meta property="og:url" content="https://vaizer0.github.io/browser-agent-harness/">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Free AI Coding Assistant — Browser Agent Harness</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+<header class="top">
+<button class="icon mobile" id="openLeft" aria-label="Open chats">☰</button>
+<div class="brand"><span class="mark">AI</span><span>Browser Agent Harness</span></div>
+<div class="status"><span class="pill warn" id="statePill">● Idle</span><span class="pill" id="modelPill">Model: openai</span><span class="pill" id="thinkPill">Thinking: Auto</span></div>
+<div class="actions"><button class="btn" id="newBtn">New</button><button class="btn" id="settingsBtn">Settings</button><button class="icon mobile" id="openRight" aria-label="Open activity">⋮</button></div>
+</header>
+<main class="main">
+<aside class="left"><div class="head">Chats <button class="icon" id="leftNew">+</button></div><div class="scroll" id="chatList"></div></aside>
+<section class="center">
+<div class="session"><div class="sessionTitle" id="sessionTitle">New Chat</div><button class="btn" id="modeBtn">Mode: Chat</button><button class="icon" id="sessionMenu">⋯</button></div>
+<div class="messages" id="messages"><div class="inner" id="inner"></div></div>
+<div class="composerWrap"><div class="composerBox"><textarea id="composer" class="composer" placeholder="Message the AI…"></textarea><div class="tools"><button class="btn" id="attachBtn">Workspace</button><button class="btn" id="thinkBtn">Thinking: Auto</button><button class="btn" id="localBtn">Local</button><span class="spacer"></span><button class="btn danger" id="stopBtn" style="display:none">Stop</button><button class="btn primary" id="sendBtn">Send</button></div></div></div>
+</section>
+<aside class="right"><div class="head">Activity <button class="icon" id="clearActivity">×</button></div><div class="scroll" id="activityList"></div></aside>
+</main>
+<div class="statusbar"><span id="statusLeft">Provider: Free Anonymous</span><span id="statusRight">Chats stored locally</span></div>
+</div>
+<input type="file" id="fileInput" multiple hidden>
+<div class="overlay" id="overlay"><div class="modal"><div class="modalHead"><span id="modalTitle"></span><button class="icon" id="modalClose">×</button></div><div class="modalBody" id="modalBody"></div><div class="modalFoot" id="modalFoot"></div></div></div>
+<div class="drawer drawerLeft" id="leftDrawer"><div class="drawerPanel"><div class="head">Chats <button class="icon" data-close="leftDrawer">×</button></div><div class="scroll" id="leftDrawerBody"></div></div></div>
+<div class="drawer drawerRight" id="rightDrawer"><div class="drawerPanel"><div class="head">Activity <button class="icon" data-close="rightDrawer">×</button></div><div class="scroll" id="rightDrawerBody"></div></div></div>
+<script src="app.js" defer></script>
+</body>
+</html>
