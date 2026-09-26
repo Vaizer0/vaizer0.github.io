@@ -1,0 +1,55 @@
+ebsite text, translator notes, and all non-story content.
+
+CONSISTENCY:
+
+- Keep character names unchanged.
+- Preserve established English terminology exactly across all chapters.
+- Established terminology overrides literal translation, synonyms, stylistic alternatives, and personal preference.
+- Apply established terminology to all derived compounds and titles.
+
+STYLE:
+
+- Write fluent, premium English in a direct web-novel style.
+- Prioritize clarity and consistency over literal wording.
+- Preserve pacing, emphasis, dialogue tone, and natural flow.
+- Enhance atmosphere, tension, emotion, body language, and momentum naturally when needed and supported by the source.
+- Use natural contractions and idiomatic English when appropriate.
+
+DIALOGUE & QUOTATION MARKS:
+
+- Preserve all direct speech as quoted dialogue in English.
+- Add opening and closing quotation marks around every spoken line that is spoken aloud.
+- If dialogue is interrupted by narration, keep the spoken parts inside quotes on both sides of the interruption.
+- If a sentence begins as narration and then shifts into speech, mark the speech portion with quotes.
+- Do not remove quotation marks that belong to dialogue.
+- Do not leave spoken lines unquoted.
+- Keep dialogue punctuation natural in English, even when the Arabic source places punctuation differently.
+- Preserve speaker changes clearly so the reader can tell exactly who is speaking.
+- When a line contains both narration and speech, translate it so the narration stays outside the quotes and the spoken words stay inside the quotes.
+
+TERMINOLOGY:
+
+- Use the novel’s established English terms exactly, including: True Beginning Empire, Grave Empire, use "'Master' Law" instead of "'Sovereign' Law", Master Law of Truth, Truth-Chosen, Master Law-Chosen, Space Beast, Space Beast Ancestor, Arkail the Time, Althera, Pitsu, Morval, Robin, Kaylis.
+- Use these cultivation ranks exactly: Energy Foundation, Knight, Saint, Sage, Martial Emperor, World Cataclysm, Nexus-State (not connection suffering), Law Domination.
+- Use these soul levels exactly: Primal White, Silver Weapon, Royal Purple, Golden Sovereign.
+- Preserve capitalization and recurring terminology consistently.
+- Never replace an established term with a synonym or variant (e.g. Time not Chronos, Master Law not Sovereign Law, Grave Empire not Shroud Empire).
+
+SOUND EFFECTS:
+
+- Translate sound effects naturally into English.
+- Output them as plain text only; never wrap them in asterisks, quotes, italics, Markdown, or other formatting.
+- Examples: Hoooo..., Whoosh..., Boom!, Rumble..., Crack!
+
+OUTPUT:
+
+- Preserve paragraph breaks exactly as in the source.
+- Do not merge, split, reorder, or combine paragraphs.
+- Keep dialogue and narration separated the same way as the original.
+- Output only the translated chapter or numbered paragraphs in the same format as the input.
+- No notes, explanations, summaries, or comments.
+
+Translate the following:`;
+const d={api:"http://127.0.0.1:8081/v1",key:"sk-gemini",model:"gemini-3.6-flash",target:"English"},LS="truthNovelSettingsV1",C="truthNovelChaptersV1",T="truthNovelTrV1";let ch=[],f=[],pg=1,cur=-1,txt="",eng="",showEng=false;const sizeKey="truthNovelFont",lineKey="truthNovelLine";let fs=+(localStorage.getItem(sizeKey)||18),lh=+(localStorage.getItem(lineKey)||1.78);
+const $=id=>document.getElementById(id),list=$("list"),status=$("status"),count=$("count"),catalog=$("catalog"),reader=$("reader"),body=$("body");
+try{Object.assign(d,JSON.parse(localStorage.getItem(LS)||"{}"))}catch{};$("api").value=d.api;$("key").value=d.key;$("model").value=d.model;$("target").value=d.target;$("font").value=fs;$("line").value=lh;
