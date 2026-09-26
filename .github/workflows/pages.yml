@@ -1,4 +1,4 @@
-name: Deploy Truth Novel to GitHub Pages
+name: Deploy Truth Novel standalone site
 on:
   push:
     branches: [main]
@@ -8,8 +8,8 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: truthnovel-pages
+  cancel-in-progress: true
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,20 +19,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Assemble single HTML page
+      - name: Validate standalone page
         run: |
           set -e
-          test -f .site/part-00.html
-          cat .site/part-*.html > _site-index.html
-          mkdir -p _site
-          mv _site-index.html _site/index.html
-          printf '%s\n' 'Truth Novel static site assembled.' > _site/.nojekyll
-      - name: Configure Pages
+          test -f index.html
+          grep -q 'Truth Novel' index.html
+          grep -q 'truthnovel.top' index.html
+          grep -q 'gemini-3.6-flash' index.html
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Upload Pages artifact
+      - name: Upload standalone site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
-      - name: Deploy to GitHub Pages
+          path: .
+      - name: Deploy standalone Truth Novel
         id: deployment
         uses: actions/deploy-pages@v4
