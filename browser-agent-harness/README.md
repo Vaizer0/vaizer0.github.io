@@ -17,3 +17,7 @@ https://vaizer0.github.io/browser-agent-harness/
 The GitHub Pages frontend is static. It cannot start a Termux/Python process. A local Gemini Web2API server must already be running, or the user must provide a remote HTTPS endpoint.
 
 Chats are persisted locally in the browser. API keys are intentionally not written to localStorage.
+
+## Credits
+
+Created by **Vaizero** — Instagram [@vaizero126](https://instagram.com/vaizero126) · GitHub [Vaizer0](https://github.com/Vaizer0)
