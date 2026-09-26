@@ -1,0 +1,11 @@
+{
+  "name":"Browser Agent Harness",
+  "short_name":"Agent Harness",
+  "start_url":"/browser-agent-harness/",
+  "scope":"/browser-agent-harness/",
+  "display":"standalone",
+  "background_color":"#0b0f14",
+  "theme_color":"#0b0f14",
+  "description":"A lightweight browser AI coding assistant for Android and PC Chrome.",
+  "icons":[]
+}
